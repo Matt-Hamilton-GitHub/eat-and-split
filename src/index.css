@@ -89,12 +89,12 @@ body {
   grid-column: 2;
 }
 
-.sidebar li .button {
+.sidebar li .btn-select {
   grid-row: span 2;
   grid-column: 3;
 }
 
-.sidebar > .button {
+.sidebar > .btn-select {
   float: right;
   margin-right: 1.2rem;
 }
@@ -133,7 +133,6 @@ label {
 
 label::first-letter {
   display: inline-block;
-  margin-right: 4px;
   font-size: 1.8rem;
 }
 
@@ -155,7 +154,7 @@ select:focus {
   border: 1px solid var(--color-dark);
 }
 
-form .button {
+form .btn-select {
   margin-top: 0.6rem;
   grid-column: 2;
 }
