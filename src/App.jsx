@@ -14,10 +14,19 @@ function App() {
   }
 
   const handleSelectFriend = (friend) =>{
-
     setSelectedFriend(curr => curr?.id === friend.id ? null : friend)
     setShowBtn(false)
   }
+
+  const handleSplitBill = (value) => {
+
+   setFriends(friends => friends.map(friend => friend.id === selectedFriend.id 
+    ? {...friend, balance: friend.balance + value}
+    : friend))
+
+    setSelectedFriend(null)
+  }
+
 
   return (
     <div className="app">
@@ -32,7 +41,9 @@ function App() {
         <Button onClick={() => setShowBtn(prev => !prev)}>{showBtn ? 'Close' : 'Add Friend'}</Button>
       </div>
 
-      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend}/>}
+      {selectedFriend && <FormSplitBill 
+      selectedFriend={selectedFriend}
+      handleSplitBill={handleSplitBill}/>}
     </div>
   );
 }
